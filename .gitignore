@@ -16,3 +16,7 @@
 *.toc
 
 *.synctex(busy)
+
+*.fls
+
+*.fdb_latexmk
