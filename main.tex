@@ -1,0 +1,122 @@
+\documentclass[12pt]{report}
+% Datos del documento
+\title{Apuntes de Desarrollo Web}
+\author{Equipo del Curso Web 2021}
+% Paquetes
+\usepackage[subpreambles=true]{standalone}	% Apoya en la importación de documentos
+\usepackage{import}													% Permite la importación de documentos
+\usepackage{epsfig,graphicx,subfigure} 			% For inserting figures
+\usepackage[utf8]{inputenc}									% Símbolos
+\usepackage[spanish]{babel}					% Idiomas
+	\decimalpoint															% Cambia , por . en los decimales
+\usepackage{lmodern} 										% Fuente compatible
+\usepackage{listings}												% Coloración de códigos
+	\renewcommand\lstlistingname{Código}
+	\renewcommand\lstlistlistingname{Códigos}
+\usepackage[dvipsnames]{xcolor}[table]			% Colores
+	\definecolor{codegreen}{rgb}{0,0.6,0}
+	\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+	\definecolor{codepurple}{rgb}{0.58,0,0.82}
+	\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\usepackage{setspace} 											% For adjusting line spacing
+\usepackage{boxedminipage,fancybox} 				% For boxed texts
+\usepackage{url} 	 													% For citing URL
+\usepackage{imakeidx}												% For generating index
+\makeindex[intoc]														% make file(s) *.idx
+\usepackage{marginnote}									% Notas al margen
+\usepackage{csquotes}										% Citas en línea y alejadas
+\usepackage{cancel}
+\usepackage{enumitem}[shortlabels]			% Para personalizar listas
+\usepackage{tikz}												% TikZ environment
+\usetikzlibrary{babel}					
+\usetikzlibrary{intersections, calc, shapes.geometric}		%Permite el uso de líneas guía y sus intersecciones 
+\usepackage{hyperref}										%Para referencias 
+\hypersetup{
+    colorlinks=true,			%Define si los \ref se colorean
+    linkcolor=blue,			%Define el color de los \ref
+    filecolor=magenta,		%Define el color de las referencias a documentos
+    urlcolor=cyan,				%Define el color de las referencias a urls
+    bookmarks=true,			%Enlaza la tabla de contenidos en el visor de pdf
+    pdftitle={Apuntes de Desarrollo Web},		%Es el título del pdf que recibe el visor
+    breaklinks=true,			%Permite que los links ocupen más de un renglón
+    linktocpage=true			%Hace que las páginas, en vez del título de las secciones sean enlazadas
+}
+\urlstyle{same}
+
+% Definición del estilo de los códigos
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\chapter{Módulo 1. Desarrollo de páginas web dinámicas con HTML5 y PHP}
+		\import{mod1/}{mod1.tex}
+	\chapter{Módulo 2. Análisis y diseño de bases de datos relacionales}
+		\import{mod2/}{mod2.tex}
+	\chapter{Módulo 3. Desarrollo de páginas web interactivas con JavaScript}
+		\import{mod3/}{mod3.tex}
+	\chapter{Módulo 4. Diseño de páginas web adaptables y accesibles}
+		\import{mod4/}{mod4.tex}
+	\chapter{Módulo 5. Integración de proyecto web e introducción a la seguridad web}
+		\import{mod5/}{mod5.tex}
+	\appendix
+	\chapter{Apéndices}
+		\import{apend/}{apend.tex}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
