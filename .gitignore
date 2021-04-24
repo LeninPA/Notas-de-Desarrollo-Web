@@ -20,3 +20,11 @@
 *.fls
 
 *.fdb_latexmk
+
+*.ilg
+
+*.ind
+
+standalones/*/img/*
+
+standalones/*/*.pdf
