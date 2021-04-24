@@ -1,0 +1,190 @@
+\documentclass[11pt]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Este es el mismo código que en:
+% mod5.tex
+% Recomendaciones de IDEs
+% Adaptado para que la tabla se viera en una sola página
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Datos del documento
+\title{Recomendaciones de IDEs}
+\author{Equipo del Curso Web 2021}
+\date{}
+% Paquetes
+\usepackage[subpreambles=true]{standalone}	% Apoya en la importación de documentos
+\usepackage{import}													% Permite la importación de documentos
+\usepackage{float} 													% For new floating environments
+\usepackage{epsfig,graphicx,subfigure} 			% For inserting figures
+	\graphicspath{ {img/} }
+\usepackage[utf8]{inputenc}									% Símbolos
+\usepackage[spanish]{babel}									% Idiomas
+	\decimalpoint															% Cambia , por . en los decimales
+\usepackage{multirow} 											% For merging cells in tables
+\usepackage{array,amssymb} 							% For multi-page tables
+\usepackage{longtable, makecell} 							% For multi-page tables
+\usepackage{lmodern} 												% Fuente compatible
+\usepackage{listings}												% Coloración de códigos
+	\renewcommand\lstlistingname{Código}
+	\renewcommand\lstlistlistingname{Códigos}
+\usepackage[dvipsnames]{xcolor}[table]			% Colores
+	\definecolor{codegreen}{rgb}{0,0.6,0}
+	\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+	\definecolor{codepurple}{rgb}{0.58,0,0.82}
+	\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\usepackage{setspace} 											% For adjusting line spacing
+\usepackage{boxedminipage,fancybox} 				% For boxed texts
+\usepackage{url} 	 													% For citing URL
+\usepackage{imakeidx}												% For generating index
+\makeindex[intoc]														% make file(s) *.idx
+\usepackage{marginnote}											% Notas al margen
+\usepackage{csquotes}												% Citas en línea y alejadas
+\usepackage{cancel}
+\usepackage{enumitem}[shortlabels]					% Para personalizar listas
+\usepackage{rotating} 											% For rotating a page (landscape) or inclined texts
+\usepackage{dirtytalk}																% Citas sencillas
+\usepackage{tikz}														% TikZ environment
+\usetikzlibrary{babel}					
+\usetikzlibrary{intersections, calc, shapes.geometric}		%Permite el uso de líneas guía y sus intersecciones 
+\usepackage{hyperref}										% Para referencias 
+\hypersetup{
+    colorlinks=true,										% Define si los \ref se colorean
+    linkcolor=blue,											% Define el color de los \ref
+    filecolor=magenta,									% Define el color de las referencias a documentos
+    urlcolor=cyan,											% Define el color de las referencias a urls
+    bookmarks=true,											% Enlaza la tabla de contenidos en el visor de pdf
+    pdftitle={Apuntes de Desarrollo Web},		% Es el título del pdf que recibe el visor
+    breaklinks=true,										% Permite que los links ocupen más de un renglón
+    linktocpage=true										% Hace que las páginas, en vez del título de las secciones sean enlazadas
+}
+\urlstyle{same}
+
+% Definición del estilo de los códigos
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstdefinestyle{table}{
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,              
+    tabsize=2
+}
+
+\renewcommand{\familydefault}{\sfdefault}	% Fuente
+
+\begin{document}
+    \begin{center}
+        {\Huge Recomendaciones de IDEs}\\
+        \vspace{0.5cm}
+        {\LARGE Equipo del Curso Web 2021}
+    \end{center}
+    \begin{table}[!hbt]
+        % \caption{Recomendaciones de IDEs}
+        \begin{center}
+            \begin{tabular}{c c c}
+                \textbf{Nombre}	&	\textbf{Descripción}	&	\textbf{Es el indicado si...}\\
+                \hline
+                % Atom
+                    \parbox[c]{2cm}{
+                        \centering
+                        \href{https://atom.io}{Atom}
+                        \newline\newline
+                        \includegraphics[height=1.5cm]{logo_atom}	
+                    }	
+                    &
+                    \parbox[c]{3cm}{
+                        Editor de código multiplataforma creado por GitHub
+                    }
+                    &	
+                    \parbox[c]{8cm}{
+                        \begin{itemize}
+                            \item Necesitas algo ligero
+                            \item Quieres algo sencillo de usar y aprender
+                            \item Quieres trabajar colaborativamente
+                            \item Quieres personalizar tu IDE
+                        \end{itemize}
+                    }
+                    \\\hline
+                % VSC
+                    \parbox[c]{2cm}{
+                        \centering
+                        \href{https://code.visualstudio.com/download}{VS Code}
+                        \newline\newline
+                        \includegraphics[height=1.5cm]{logo_vscode}	
+                    }
+                    &
+                    \parbox[c]{3cm}{
+                        IDE multiplataforma creado por Microsoft
+                    }
+                    &
+                    \parbox[c]{8cm}{
+                        \begin{itemize}
+                            \item Vas a trabajar en proyectos grandes
+                            \item Quieres trabajar con varios lenguajes
+                            \item Quieres personalizar tu IDE
+                            \item Quieres usar varias extensiones
+                        \end{itemize}
+                    }
+                    \\\hline
+                % JetBrains
+                    \parbox[c]{2cm}{
+                        \centering
+                        \href{https://www.jetbrains.com}{JetBrains}
+                        \newline\newline
+                        \includegraphics[height=1.5cm]{logo_jetbrains}	
+                    }	
+                    &	
+                    \parbox[c]{3cm}{
+                        Es una familia de IDEs especializados con versiones libres y de pago como 
+                        \href{https://www.jetbrains.com/es-es/phpstorm/}{PHPstorm} o 
+                        \href{https://www.jetbrains.com/es-es/webstorm/}{WebStorm}
+                    }
+                    &
+                    \parbox[c]{8cm}{
+                        \begin{itemize}
+                            \item Vas a trabajar en un área especializada, e.g.: puro backend o puro frontend
+                            \item Tienes una máquina con buen rendimiento
+                            \item Quieres ver tus errores en tiempo real % corregir
+                        \end{itemize}
+                    }
+                    \\\hline
+                % Repl.it
+                    \parbox[c]{2cm}{
+                        \centering
+                        \href{https://replit.com}{Repl.it}
+                        \newline\newline
+                        \includegraphics[height=1.5cm]{logo_replit}	
+                    }	
+                    &
+                    \parbox[c]{3cm}{
+                        IDE en línea colaborativo inspirado en Google Docs
+                    }
+                    &
+                    \parbox[c]{8cm}{
+                        \begin{itemize}
+                            \item No puedes instalar programas
+                            \item Requieres colaboración eficiente en tiempo real
+                            \item Quieres todas las ventajas de un IDE sin necesidad de configurarlo
+                        \end{itemize}
+                    }
+                    \\\hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+\end{document}
