@@ -27,6 +27,7 @@
 \usepackage{csquotes}										% Citas en línea y alejadas
 \usepackage{cancel}
 \usepackage{enumitem}[shortlabels]			% Para personalizar listas
+\usepackage{rotating} 									% For rotating a page (landscape) or inclined texts
 \usepackage{tikz}												% TikZ environment
 \usetikzlibrary{babel}					
 \usetikzlibrary{intersections, calc, shapes.geometric}		%Permite el uso de líneas guía y sus intersecciones 
@@ -63,6 +64,7 @@
     tabsize=2
 }
 
+\renewcommand{\familydefault}{\sfdefault}	% Fuente
 
 \begin{document}
 	\maketitle
@@ -74,9 +76,9 @@
 	\chapter{Módulo 3. Desarrollo de páginas web interactivas con JavaScript}
 		%\import{mod3/}{mod3.tex}
 	\chapter{Módulo 4. Diseño de páginas web adaptables y accesibles}
-		\import{mod4/}{mod4.tex}
+		%\import{mod4/}{mod4.tex}
 	\chapter{Módulo 5. Integración de proyecto web e introducción a la seguridad web}
-		%\import{mod5/}{mod5.tex}
+		\import{mod5/}{mod5.tex}
 	\appendix
 	\chapter{Apéndices}
 		%\import{apend/}{apend.tex}
