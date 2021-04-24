@@ -26,16 +26,17 @@
 			% Maybe una longtable en la que se tenga tipo/clasificación,
 			% comando, código y cómo se ve en el editor
 			% No olvidar poner el a, maybe?
-			\begin{longtable}{c >{\ttfamily} c c >{\ttfamily} c c}
+			\begin{longtable}{c >{\ttfamily} c c >{\ttfamily\footnotesize} c}
 				\caption{Etiquetas de HTML}\\
 				% Encabezado que se repite
-				Tipo	&	Etiqueta	&	Uso(s)	&	Código	&	Salida \\\hline
+				Tipo	&	Etiqueta	&	Uso(s)	&	Código	\\\hline
 				\endfirsthead
 				% Para marcar continuación
-				\multicolumn{5}{c}{\tablename\ \thetable{} -- continuación de la pagina anterior}\\
-				Tipo	&	Etiqueta	&	Uso(s)	&	Código	&	Salida	\\\hline
+				\multicolumn{4}{c}{\tablename\ \thetable{} -- continuación de la pagina anterior}\\
+				Tipo	&	Etiqueta	&	Uso(s)	&	Código	\\\hline
+				\endhead
 				% Pie de tabla 
-				\multicolumn{5}{c}{Continuación en la siguiente pagina}\\\hline
+				\hline\multicolumn{4}{c}{Continuación en la siguiente pagina}\\\hline
 				\endfoot
 				% Último pie de tabla
 				\endlastfoot
@@ -43,29 +44,83 @@
 				% Etiquetas de texto
 				\multirow{7}{*}{\rotatebox[origin=c]{90}{De texto}}
 					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/Heading_Elements}{$<$h1$>$}
-						&	Encabezado 1	&	$<$h1$>\cdots<$/h1$>$		&	texto	\\
+						&	Encabezado 1	&	$<$h1$>\cdots<$/h1$>$	\\
 					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/Heading_Elements}{$<$h2$>$}
-						&	Encabezado 2	& $<$h2$>\cdots<$/h2$>$		&	texto	\\
+						&	Encabezado 2	& $<$h2$>\cdots<$/h2$>$	\\
 					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/Heading_Elements}{$<$h3$>$}
-						&	Encabezado 3	& $<$h3$>\cdots<$/h3$>$		&	texto	\\
+						&	Encabezado 3	& $<$h3$>\cdots<$/h3$>$	\\
 					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/Heading_Elements}{$<$h4$>$}
-						&	Encabezado 4	& $<$h4$>\cdots<$/h4$>$		&	texto	\\
+						&	Encabezado 4	& $<$h4$>\cdots<$/h4$>$	\\
 					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/Heading_Elements}{$<$h5$>$}
-						&	Encabezado 5	& $<$h5$>\cdots<$/h5$>$		&	texto	\\
+						&	Encabezado 5	& $<$h5$>\cdots<$/h5$>$	\\
 					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/Heading_Elements}{$<$h6$>$}
-						&	Encabezado 6	& $<$h6$>\cdots<$/h6$>$		&	texto	\\
+						&	Encabezado 6	& $<$h6$>\cdots<$/h6$>$	\\
 					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/p}{$<$p$>$}
-						&	Párrafo				&	$<$p$>\cdots<$/p$>$	&	texto	\\
+						&	Párrafo				&	$<$p$>\cdots<$/p$>$	\\
 				\multirow{3}{*}{\rotatebox[origin=c]{90}{Vacíos}}
 					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/img}{$<$img$>$}
-						&	Imagen						&	$<$img src=\say{$\cdots$} alt='$\cdots$' $>$	&	texto	\\
+						&	Imagen						&	$<$img src=\say{$\cdots$} alt=\say{$\cdots$} $>$\\
 					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/br}{$<$br$>$}
-						&	Salto de línea		&	$<$br$>$																	&	texto	\\
+						&	Salto de línea		&	$<$br$>$	\\
 					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/hr}{$<$hr$>$}
-						&	Cambio de sección	&	$<$hr$>$	&	texto	\\
+						&	Cambio de sección	&	$<$hr$>$	\\
+				\multirow{3}{*}{\rotatebox[origin=c]{90}{Listas}}
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/ol}{$<$ol$>$}
+						&	Lista ordenada		&	
+						\begin{lstlisting}[language=HTML]
+<ol>
+	<li>...</li>
+</ol>
+						\end{lstlisting}
+						\\
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/ul}{$<$ul$>$}
+						&	Lista desordenada	&	
+						\begin{lstlisting}[language=HTML]
+<ul>
+	<li>...</li>
+</ul>
+						\end{lstlisting}														
+						\\
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/hr}{$<$li$>$}
+						&	Elemento de lista	&	$<$li$>\cdots<$li$>$	\\
+				\multirow{6}{*}{\rotatebox[origin=c]{90}{Tablas}}
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/table}{$<$table$>$}
+						&	Tabla	&
+						\multirow{6}{*}{
+							% \begin{frame}[fragile]
+							Véase el código \ref{ls:tabla}
+						% \end{frame}
+						}\\
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/tr}{$<$tr$>$}
+						&	Fila	&	\\
+					&	\href{https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead}{$<$thead$>$}*
+						&	Encabezado de tabla	&	\\
+					&	\href{https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead}{$<$th$>$}
+						&	Celda de encabezado de tabla	&	\\
+					&	\href{https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead}{$<$tbody$>$}
+						&	Cuerpo de tabla	&	\\
+					&	\href{https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead}{$<$td$>$}
+						&	Celda de tabla	&	\\
 					% &	\href{}{$<$$>$}	
-					%		&		&	$<$$>\cdots<$/$>$	&	texto	\\
+					%		&		&	$<$$>\cdots<$/$>$	\\
 			\end{longtable}
+			*: En inglés
+			\lstset{style=mystyle}
+			\begin{lstlisting}[language=HTML, caption={Tablas en HTML}, label={ls:tabla}]
+<table>
+	<thead>
+		<tr>
+			<th>Encabezado</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Celda<td>
+		</tr>
+	</tbody>
+</table>
+			\end{lstlisting}
+
 	% 	\subsection{Hipervínculos y rutas}
 	% 	\subsection{Imágenes}
 	% 		\subsubsection{Formatos}
