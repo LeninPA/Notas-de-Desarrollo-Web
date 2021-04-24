@@ -5,11 +5,15 @@
 % Paquetes
 \usepackage[subpreambles=true]{standalone}	% Apoya en la importación de documentos
 \usepackage{import}													% Permite la importación de documentos
+\usepackage{float} 													% For new floating environments
 \usepackage{epsfig,graphicx,subfigure} 			% For inserting figures
 \usepackage[utf8]{inputenc}									% Símbolos
-\usepackage[spanish]{babel}					% Idiomas
+\usepackage[spanish]{babel}									% Idiomas
 	\decimalpoint															% Cambia , por . en los decimales
-\usepackage{lmodern} 										% Fuente compatible
+\usepackage{multirow} 											% For merging cells in tables
+\usepackage{array,amssymb} 							% For multi-page tables
+\usepackage{longtable, makecell} 							% For multi-page tables
+\usepackage{lmodern} 												% Fuente compatible
 \usepackage{listings}												% Coloración de códigos
 	\renewcommand\lstlistingname{Código}
 	\renewcommand\lstlistlistingname{Códigos}
@@ -23,24 +27,25 @@
 \usepackage{url} 	 													% For citing URL
 \usepackage{imakeidx}												% For generating index
 \makeindex[intoc]														% make file(s) *.idx
-\usepackage{marginnote}									% Notas al margen
-\usepackage{csquotes}										% Citas en línea y alejadas
+\usepackage{marginnote}											% Notas al margen
+\usepackage{csquotes}												% Citas en línea y alejadas
 \usepackage{cancel}
-\usepackage{enumitem}[shortlabels]			% Para personalizar listas
-\usepackage{rotating} 									% For rotating a page (landscape) or inclined texts
-\usepackage{tikz}												% TikZ environment
+\usepackage{enumitem}[shortlabels]					% Para personalizar listas
+\usepackage{rotating} 											% For rotating a page (landscape) or inclined texts
+\usepackage{dirtytalk}																% Citas sencillas
+\usepackage{tikz}														% TikZ environment
 \usetikzlibrary{babel}					
 \usetikzlibrary{intersections, calc, shapes.geometric}		%Permite el uso de líneas guía y sus intersecciones 
-\usepackage{hyperref}										%Para referencias 
+\usepackage{hyperref}										% Para referencias 
 \hypersetup{
-    colorlinks=true,			%Define si los \ref se colorean
-    linkcolor=blue,			%Define el color de los \ref
-    filecolor=magenta,		%Define el color de las referencias a documentos
-    urlcolor=cyan,				%Define el color de las referencias a urls
-    bookmarks=true,			%Enlaza la tabla de contenidos en el visor de pdf
-    pdftitle={Apuntes de Desarrollo Web},		%Es el título del pdf que recibe el visor
-    breaklinks=true,			%Permite que los links ocupen más de un renglón
-    linktocpage=true			%Hace que las páginas, en vez del título de las secciones sean enlazadas
+    colorlinks=true,										% Define si los \ref se colorean
+    linkcolor=blue,											% Define el color de los \ref
+    filecolor=magenta,									% Define el color de las referencias a documentos
+    urlcolor=cyan,											% Define el color de las referencias a urls
+    bookmarks=true,											% Enlaza la tabla de contenidos en el visor de pdf
+    pdftitle={Apuntes de Desarrollo Web},		% Es el título del pdf que recibe el visor
+    breaklinks=true,										% Permite que los links ocupen más de un renglón
+    linktocpage=true										% Hace que las páginas, en vez del título de las secciones sean enlazadas
 }
 \urlstyle{same}
 
@@ -70,7 +75,7 @@
 	\maketitle
 	\tableofcontents
 	\chapter{Módulo 1. Desarrollo de páginas web dinámicas con HTML5 y PHP}
-		%\import{mod1/}{mod1.tex}
+		\import{mod1/}{mod1.tex}
 	\chapter{Módulo 2. Análisis y diseño de bases de datos relacionales}
 		%\import{mod2/}{mod2.tex}
 	\chapter{Módulo 3. Desarrollo de páginas web interactivas con JavaScript}
