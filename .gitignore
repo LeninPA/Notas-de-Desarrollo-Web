@@ -28,3 +28,7 @@
 standalones/*/img/*
 
 standalones/*/*.pdf
+
+*.lol
+
+*.lot
