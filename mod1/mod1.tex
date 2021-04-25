@@ -39,6 +39,7 @@
 				\hline\multicolumn{4}{c}{Continuación en la siguiente pagina}\\\hline
 				\endfoot
 				% Último pie de tabla
+				\hline
 				\endlastfoot
 				% Contenido
 				% Etiquetas de texto
@@ -57,6 +58,9 @@
 						&	Encabezado 6	& $<$h6$>\cdots<$/h6$>$	\\
 					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/p}{$<$p$>$}
 						&	Párrafo				&	$<$p$>\cdots<$/p$>$	\\
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/a}{$<$a$>$}
+						&	Hipervínculos	&	$<$a$>\cdots<$/a$>$	\\
+				\hline
 				\multirow{3}{*}{\rotatebox[origin=c]{90}{Vacíos}}
 					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/img}{$<$img$>$}
 						&	Imagen						&	$<$img src=\say{$\cdots$} alt=\say{$\cdots$} $>$\\
@@ -64,6 +68,7 @@
 						&	Salto de línea		&	$<$br$>$	\\
 					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/hr}{$<$hr$>$}
 						&	Cambio de sección	&	$<$hr$>$	\\
+				\hline
 				\multirow{3}{*}{\rotatebox[origin=c]{90}{Listas}}
 					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/ol}{$<$ol$>$}
 						&	Lista ordenada		&	
@@ -83,6 +88,7 @@
 						\\
 					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/hr}{$<$li$>$}
 						&	Elemento de lista	&	$<$li$>\cdots<$li$>$	\\
+				\hline
 				\multirow{6}{*}{\rotatebox[origin=c]{90}{Tablas}}
 					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/table}{$<$table$>$}
 						&	Tabla	&
@@ -95,17 +101,63 @@
 						&	Fila	&	\\
 					&	\href{https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead}{$<$thead$>$}*
 						&	Encabezado de tabla	&	\\
-					&	\href{https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead}{$<$th$>$}
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/th}{$<$th$>$}
 						&	Celda de encabezado de tabla	&	\\
-					&	\href{https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead}{$<$tbody$>$}
+					&	\href{https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody}{$<$tbody$>$}*
 						&	Cuerpo de tabla	&	\\
-					&	\href{https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead}{$<$td$>$}
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/td}{$<$td$>$}
 						&	Celda de tabla	&	\\
+				\hline
+				\multirow{6}{*}{\rotatebox[origin=c]{90}{Formato}}
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/strong}{$<$strong$>$}
+						&	Mucho énfasis	&	$<$strong$>\cdots<$/strong$>$	\\
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/i}{$<$i$>$}
+						&	Itálicas	&	$<$i$>\cdots<$/i$>$	\\
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/sup}{$<$sup$>$}
+						&	Superíndice	&	$<$sup$>\cdots<$/sup$>$	\\
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/sub}{$<$sub$>$}
+						&	Superíndice	&	$<$sub$>\cdots<$/sub$>$	\\
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/blockquote}{$<$blockquote$>$}
+						&	Citas de bloque	&	$<$blockquote$>\cdots<$/blockquote$>$	\\
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/code}{$<$code$>$}
+						&	Código	&	$<$code$>\cdots<$/code$>$	\\
+				\hline
+				\multirow{7}{*}{\rotatebox[origin=c]{90}{Formularios}}
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/form}{$<$form$>$}
+						&	Formularios	&	\multirow{7}{*}{Véase el código \ref{ls:form}}	\\
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/input}{$<$input$>$}	
+						&	Recepción de datos	&		\\
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/label}{$<$label$>$}	
+						&	Etiqueta asociada a un \textit{input}	&		\\
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/button}{$<$button$>$}	
+						&	Botón	&		\\
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/textarea}{$<$textarea$>$}	
+						&	Recepción de texto multilínea	&		\\
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/fieldset}{$<$fieldset$>$}	
+						&	Organiza campos en un formulario	&		\\
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/legend}{$<$legend$>$}	
+						&	Título para \textit{fieldset}	&		\\
+				\hline
+				\multirow{3}{*}{\rotatebox[origin=c]{90}{\tiny Multimedia}}
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/audio}{$<$audio$>$}	
+						&	Insertar audio	&	$<$audio src=\say{}$>$Error$<$/audio$>$	\\
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/video}{$<$video$>$}	
+						&	Insertar video	&	$<$video src=\say{}$>$Error$<$/video$>$	\\
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/embed}{$<$embed$>$}	
+						&	Insertar contenido externo	&	$<$embed src=\say{} type=\say{}$>$	\\
+				\multirow{3}{*}{\rotatebox[origin=c]{90}{Head}}
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/meta}{$<$meta$>$}	
+						&	Metadatos	&	$<$meta lang=\say{es}$>$	\\
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/title}{$<$title$>$}	
+						&	Nombre de la pestaña	&	$<$title$>\cdots<$/title$>$	\\
+					&	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/link}{$<$link$>$}	
+						&	Relación con un recurso externo	&	$<$link href=\say{} rel=\say{}$>$	\\
 					% &	\href{}{$<$$>$}	
 					%		&		&	$<$$>\cdots<$/$>$	\\
 			\end{longtable}
 			*: En inglés
 			\lstset{style=mystyle}
+			\newpage
 			\begin{lstlisting}[language=HTML, caption={Tablas en HTML}, label={ls:tabla}]
 <table>
 	<thead>
@@ -120,6 +172,13 @@
 	</tbody>
 </table>
 			\end{lstlisting}
+			\begin{lstlisting}[language=HTML, caption={Formularios en HTML}, label={ls:form}]
+<form action="" method="" target="">
+	<label for="x">Escribe:</label>
+	<input id="x" type="" name="">
+
+	<input type="submit" value="Enviar">
+</form>\end{lstlisting}
 
 	% 	\subsection{Hipervínculos y rutas}
 	% 	\subsection{Imágenes}
