@@ -1,0 +1,252 @@
+\documentclass[11pt]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Este es el mismo código que en:
+% mod1.tex
+% Etiquetas HTML
+% Adaptado para que la tabla se viera en una sola página
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Datos del documento
+\title{Etiquetas HTML}
+\author{Equipo del Curso Web 2021}
+\date{}
+% Paquetes
+\usepackage[subpreambles=true]{standalone}	% Apoya en la importación de documentos
+\usepackage{import}													% Permite la importación de documentos
+\usepackage{float} 													% For new floating environments
+\usepackage{epsfig,graphicx,subfigure} 			% For inserting figures
+	\graphicspath{ {img/} }
+\usepackage[utf8]{inputenc}									% Símbolos
+\usepackage[spanish]{babel}									% Idiomas
+	\decimalpoint															% Cambia , por . en los decimales
+\usepackage{multirow} 											% For merging cells in tables
+\usepackage{array,amssymb} 							% For multi-page tables
+\usepackage{longtable, makecell} 							% For multi-page tables
+\usepackage{lmodern} 												% Fuente compatible
+\usepackage{listings}												% Coloración de códigos
+	\renewcommand\lstlistingname{Código}
+	\renewcommand\lstlistlistingname{Códigos}
+\usepackage[dvipsnames]{xcolor}[table]			% Colores
+	\definecolor{codegreen}{rgb}{0,0.6,0}
+	\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+	\definecolor{codepurple}{rgb}{0.58,0,0.82}
+	\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\usepackage{setspace} 											% For adjusting line spacing
+\usepackage{boxedminipage,fancybox} 				% For boxed texts
+\usepackage{url} 	 													% For citing URL
+\usepackage{imakeidx}												% For generating index
+\makeindex[intoc]														% make file(s) *.idx
+\usepackage{marginnote}											% Notas al margen
+\usepackage{csquotes}												% Citas en línea y alejadas
+\usepackage{cancel}
+\usepackage{enumitem}[shortlabels]					% Para personalizar listas
+\usepackage{rotating} 											% For rotating a page (landscape) or inclined texts
+\usepackage{dirtytalk}																% Citas sencillas
+\usepackage{tikz}														% TikZ environment
+\usetikzlibrary{babel}					
+\usetikzlibrary{intersections, calc, shapes.geometric}		%Permite el uso de líneas guía y sus intersecciones 
+\usepackage{hyperref}										% Para referencias 
+\hypersetup{
+    colorlinks=true,										% Define si los \ref se colorean
+    linkcolor=blue,											% Define el color de los \ref
+    filecolor=magenta,									% Define el color de las referencias a documentos
+    urlcolor=cyan,											% Define el color de las referencias a urls
+    bookmarks=true,											% Enlaza la tabla de contenidos en el visor de pdf
+    pdftitle={Apuntes de Desarrollo Web},		% Es el título del pdf que recibe el visor
+    breaklinks=true,										% Permite que los links ocupen más de un renglón
+    linktocpage=true										% Hace que las páginas, en vez del título de las secciones sean enlazadas
+}
+\urlstyle{same}
+
+% Definición del estilo de los códigos
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstdefinestyle{table}{
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,              
+    tabsize=2
+}
+
+\renewcommand{\familydefault}{\sfdefault}	% Fuente
+% Márgenes
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+\begin{document}
+\maketitle
+\begin{longtable}{c >{\ttfamily} c c >{\ttfamily\footnotesize} c}
+  \caption{Etiquetas de HTML}\\
+  % Encabezado que se repite
+  Tipo	&	Etiqueta	&	Uso(s)	&	Código	\\\hline
+  \endfirsthead
+  % Para marcar continuación
+  \multicolumn{4}{c}{\tablename\ \thetable{} -- continuación de la pagina anterior}\\
+  Tipo	&	Etiqueta	&	Uso(s)	&	Código	\\\hline
+  \endhead
+  % Pie de tabla 
+  \hline\multicolumn{4}{c}{Continuación en la siguiente pagina}\\\hline
+  \endfoot
+  % Último pie de tabla
+  \hline
+  \endlastfoot
+  % Contenido
+  % Etiquetas de texto
+  \multirow{7}{*}{\rotatebox[origin=c]{90}{De texto}}
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/Heading_Elements}{$<$h1$>$}
+      &	Encabezado 1	&	$<$h1$>\cdots<$/h1$>$	\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/Heading_Elements}{$<$h2$>$}
+      &	Encabezado 2	& $<$h2$>\cdots<$/h2$>$	\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/Heading_Elements}{$<$h3$>$}
+      &	Encabezado 3	& $<$h3$>\cdots<$/h3$>$	\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/Heading_Elements}{$<$h4$>$}
+      &	Encabezado 4	& $<$h4$>\cdots<$/h4$>$	\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/Heading_Elements}{$<$h5$>$}
+      &	Encabezado 5	& $<$h5$>\cdots<$/h5$>$	\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/Heading_Elements}{$<$h6$>$}
+      &	Encabezado 6	& $<$h6$>\cdots<$/h6$>$	\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/p}{$<$p$>$}
+      &	Párrafo				&	$<$p$>\cdots<$/p$>$	\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/a}{$<$a$>$}
+      &	Hipervínculos	&	$<$a$>\cdots<$/a$>$	\\
+  \hline
+  \multirow{3}{*}{\rotatebox[origin=c]{90}{Vacíos}}
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/img}{$<$img$>$}
+      &	Imagen						&	$<$img src=\say{$\cdots$} alt=\say{$\cdots$} $>$\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/br}{$<$br$>$}
+      &	Salto de línea		&	$<$br$>$	\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/hr}{$<$hr$>$}
+      &	Cambio de sección	&	$<$hr$>$	\\
+  \hline
+  \multirow{3}{*}{\rotatebox[origin=c]{90}{Listas}}
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/ol}{$<$ol$>$}
+      &	Lista ordenada		&	
+      \begin{lstlisting}[language=HTML]
+<ol>
+  <li>...</li>
+</ol>
+      \end{lstlisting}
+      \\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/ul}{$<$ul$>$}
+      &	Lista desordenada	&	
+      \begin{lstlisting}[language=HTML]
+<ul>
+  <li>...</li>
+</ul>
+      \end{lstlisting}														
+      \\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/hr}{$<$li$>$}
+      &	Elemento de lista	&	$<$li$>\cdots<$li$>$	\\
+  \hline
+  \multirow{6}{*}{\rotatebox[origin=c]{90}{Tablas}}
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/table}{$<$table$>$}
+      &	Tabla	&
+      \multirow{6}{*}{
+        % \begin{frame}[fragile]
+        Véase el código \ref{ls:tabla}
+      % \end{frame}
+      }\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/tr}{$<$tr$>$}
+      &	Fila	&	\\
+    &	\href{https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead}{$<$thead$>$}
+      &	Encabezado de tabla	&	\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/th}{$<$th$>$}
+      &	Celda de encabezado de tabla	&	\\
+    &	\href{https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody}{$<$tbody$>$}
+      &	Cuerpo de tabla	&	\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/td}{$<$td$>$}
+      &	Celda de tabla	&	\\
+  \hline
+  \multirow{6}{*}{\rotatebox[origin=c]{90}{Formato}}
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/strong}{$<$strong$>$}
+      &	Mucho énfasis	&	$<$strong$>\cdots<$/strong$>$	\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/i}{$<$i$>$}
+      &	Itálicas	&	$<$i$>\cdots<$/i$>$	\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/sup}{$<$sup$>$}
+      &	Superíndice	&	$<$sup$>\cdots<$/sup$>$	\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/sub}{$<$sub$>$}
+      &	Subíndice	&	$<$sub$>\cdots<$/sub$>$	\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/blockquote}{$<$blockquote$>$}
+      &	Citas de bloque	&	$<$blockquote$>\cdots<$/blockquote$>$	\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/code}{$<$code$>$}
+      &	Código	&	$<$code$>\cdots<$/code$>$	\\
+  \hline
+  \multirow{7}{*}{\rotatebox[origin=c]{90}{Formularios}}
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/form}{$<$form$>$}
+      &	Formularios	&	\multirow{7}{*}{Véase el código \ref{ls:form}}	\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/input}{$<$input$>$}	
+      &	Recepción de datos	&		\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/label}{$<$label$>$}	
+      &	Etiqueta asociada a un \textit{input}	&		\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/button}{$<$button$>$}	
+      &	Botón	&		\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/textarea}{$<$textarea$>$}	
+      &	Recepción de texto multilínea	&		\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/fieldset}{$<$fieldset$>$}	
+      &	Organiza campos en un formulario	&		\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/legend}{$<$legend$>$}	
+      &	Título para \textit{fieldset}	&		\\
+  \hline
+  \multirow{3}{*}{\rotatebox[origin=c]{90}{\tiny Multimedia}}
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/audio}{$<$audio$>$}	
+      &	Insertar audio	&	$<$audio src=\say{}$>$Error$<$/audio$>$	\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/video}{$<$video$>$}	
+      &	Insertar video	&	$<$video src=\say{}$>$Error$<$/video$>$	\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/embed}{$<$embed$>$}	
+      &	Insertar contenido externo	&	$<$embed src=\say{} type=\say{}$>$	\\
+  \hline
+  \multirow{3}{*}{\rotatebox[origin=c]{90}{Head}}
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/meta}{$<$meta$>$}	
+      &	Metadatos	&	$<$meta lang=\say{es}$>$	\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/title}{$<$title$>$}	
+      &	Nombre de la pestaña	&	$<$title$>\cdots<$/title$>$	\\
+    &	\href{https://developer.mozilla.org/es/docs/Web/HTML/Element/link}{$<$link$>$}	
+      &	Relación con un recurso externo	&	$<$link href=\say{} rel=\say{}$>$	\\
+    % &	\href{}{$<$$>$}	
+    %		&		&	$<$$>\cdots<$/$>$	\\
+\end{longtable}
+\lstset{style=mystyle}
+\begin{lstlisting}[language=HTML, caption={Tablas en HTML}, label={ls:tabla}]
+<table>
+  <thead>
+    <tr>
+      <th>Encabezado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Celda<td>
+    </tr>
+  </tbody>
+</table>
+\end{lstlisting}
+\begin{lstlisting}[language=HTML, caption={Formularios en HTML}, label={ls:form}]
+<form action="" method="" target="">
+  <label for="x">Escribe:</label>
+  <input id="x" type="" name="">
+
+  <input type="submit" value="Enviar">
+</form>\end{lstlisting}
+\end{document}
