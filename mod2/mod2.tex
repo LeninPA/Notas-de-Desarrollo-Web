@@ -1,102 +1,191 @@
 \documentclass[12pt]{report}
 \begin{document}
-	\section{Conceptos fundamentales}
-		\subsection{¿Dato o información?}
-			% table con la definición y diferencias entre ellas
-		\subsection{Tipos de bases de datos}
-			\subsubsection{Por su ubicación}
-				\paragraph{Centralizadas}
-				\paragraph{Distribuidas}
-			\subsubsection{Por la estructura}
-				\paragraph{Estructurada}
-				\paragraph{Semiestructurada}
-			\subsubsection{Por el modelo}
-				\paragraph{Jerárquicas}
-				\paragraph{Relacionales}
-				\paragraph{Orientadas a objetos}
-				\paragraph{Orientadas a documentos}
-		\subsection{Modelo relacional}
-			\paragraph{Reglas de Codd} Es esto
-			\begin{enumerate}
-				\item regla 1
+	% \section{Conceptos fundamentales}
+	% 	\subsection{¿Dato o información?}
+	% 		% table con la definición y diferencias entre ellas
+	% 	\subsection{Tipos de bases de datos}
+	% 		\subsubsection{Por su ubicación}
+	% 			\paragraph{Centralizadas}
+	% 			\paragraph{Distribuidas}
+	% 		\subsubsection{Por la estructura}
+	% 			\paragraph{Estructurada}
+	% 			\paragraph{Semiestructurada}
+	% 		\subsubsection{Por el modelo}
+	% 			\paragraph{Jerárquicas}
+	% 			\paragraph{Relacionales}
+	% 			\paragraph{Orientadas a objetos}
+	% 			\paragraph{Orientadas a documentos}
+	% 	\subsection{Modelo relacional}
+			\paragraph{Reglas de Codd} Tomadas de 
+			\begin{enumerate}[label=\textbf{Regla \arabic*.},start=0]
+				\item Un sistema de gestión de bases de datos relacional debe 
+					gestionar sus datos almacenados sólo con el uso de sus capacidades
+					relacionales. Éste es el principio fundamental sobre el que se 
+					basan las 12 reglas restantes.
+				\item \textit{Representación de información.} Toda información debe 
+					representarse, en el nivel lógico, sólo como valores en tablas.
+				\item \textit{Acceso garantizado.} Debe ser posible acceder a 
+					cualquier ítem de datos en la base de datos al proporcionar su 
+					nombre de tabla, nombre de columna y valor de clave primaria.
+				\item \textit{Representación de valores nulos.} El sistema debe 
+					ser capaz de representar valores nulos en una forma sistemática, 
+					sin importar el tipo de datos del ítem. Los valores nulos deben 
+					ser distintos de cero o cualquier otro número, y de cadenas vacías.
+				\item \textit{Catálogo relacional.} El catálogo del sistema, que 
+					contiene la descripción lógica de la base de datos, debe 
+					representarse de la misma forma que los datos ordinarios.
+				\item \textit{Sublenguaje de datos amplio.} Sin importar el número 
+					de otros lenguajes que soporte, la base de datos debe incluir un 
+					lenguaje que permite enunciados expresados como cadenas de 
+					caracteres para soportar definición de datos, definición de vistas, 
+					manipulación de datos, reglas de integridad, autorización de usuario 
+					y un método de identificación de unidades para recuperación.
+				\item \textit{Actualización de vistas.} Cualquier vista que sea 
+					teóricamente actualizable en realidad la puede actualizar el sistema
+				\item \textit{Operaciones Insert, Delete y Update.} Cualquier relación
+					que se pueda manejar como un solo operando para recuperación 
+					(retrieval) también se puede manejar de esa forma para operaciones 
+					de inserción, borrado y actualización.
+				\item \textit{Independencia física de datos.} Los programas de aplicación 
+					son inmunes a cambios hechos a representaciones de almacenamiento o 
+					métodos de acceso.
+				\item \textit{Independencia lógica de datos.} Los cambios efectuados 
+					a nivel lógico, como dividir tablas o combinar tablas, que no afectan 
+					el contenido de información a nivel lógico, no requieren modificación 
+					de aplicaciones.
+				\item \textit{Reglas de integridad.} Las restricciones de integridad 
+					como la integridad de entidad y la integridad referencial deben 
+					especificarse en el sublenguaje de datos y almacenarse en el 
+					catálogo. Para expresar estas restricciones no se deben usar enunciados 
+					de programa de aplicación.
+				\item \textit{Independencia de distribución.} El sublenguaje de datos 
+					debe ser tal que, si la base de datos se distribuye, los programas de 
+					aplicación y los comandos de los usuarios no necesitan cambiar.
+				\item \textit{No subversión.} Si el sistema permite un lenguaje 
+					que soporte acceso a registro a la vez, cualquier programa que use 
+					este tipo de acceso no puede pasar por alto las restricciones de 
+					integridad expresadas en el lenguaje de nivel superior.
 			\end{enumerate}
-		\subsection{Características de las bases de datos}
-			\begin{enumerate}
-				\item Redundancia mínima
-				\item Integridad
-				\item Independencia lógica y física de los datos
-			\end{enumerate}
-	\section{Planificación del proyecto y definición del sistema}
-		\subsection{Diseño de la base de datos}
-			\subsubsection{Pasos del diseño} % Cambiar para ser más exacto
-				\paragraph{Diseño conceptual}
-				\paragraph{Diseño lógico}
-				\paragraph{Diseño físico}
-			\subsubsection{Llaves}
-				% table con el nombre de las llaves definición y función
-			\subsubsection{Diccionario de datos}
-				\paragraph{Definición}
-				% ejemplo chiquito
-			\subsubsection{Diagrama entidad-relación}
-				\paragraph{Elementos del modelo}
-					\begin{enumerate}
-						\item Entidades
-						\item Atributos
-						\item Relaciones
-					\end{enumerate}
-				\paragraph{Representación gráfica}
-				\paragraph{Cardinalidad}
-				\paragraph{Tipos de relaciones}
-					\begin{enumerate}
-						\item Tipo 1
-					\end{enumerate}
-				\paragraph{Modelo Chen}
-				\paragraph{UML}
-		\subsection{Construcción, implementación y mantenimiento}
-			% Pendiente ver qué va aquí
-		\subsection{Normalización}
-			\subsubsection{Primera forma normal (1NF)}
-			\subsubsection{Segunda forma normal (2NF)}
-			\subsubsection{Tercera forma normal (3NF)}
-		\subsection{Sistemas Manejadores de Bases de datos (DBMS)}
+	% 	\subsection{Características de las bases de datos}
+	% 		\begin{enumerate}
+	% 			\item Redundancia mínima
+	% 			\item Integridad
+	% 			\item Independencia lógica y física de los datos
+	% 		\end{enumerate}
+	% \section{Planificación del proyecto y definición del sistema}
+	% 	\subsection{Diseño de la base de datos}
+	% 		\subsubsection{Pasos del diseño} % Cambiar para ser más exacto
+	% 			\paragraph{Diseño conceptual}
+	% 			\paragraph{Diseño lógico}
+	% 			\paragraph{Diseño físico}
+	% 		\subsubsection{Llaves}
+	% 			% table con el nombre de las llaves definición y función
+	% 		\subsubsection{Diccionario de datos}
+	% 			\paragraph{Definición}
+	% 			% ejemplo chiquito
+	% 		\subsubsection{Diagrama entidad-relación}
+	% 			\paragraph{Elementos del modelo}
+	% 				\begin{enumerate}
+	% 					\item Entidades
+	% 					\item Atributos
+	% 					\item Relaciones
+	% 				\end{enumerate}
+	% 			\paragraph{Representación gráfica}
+	% 			\paragraph{Cardinalidad}
+	% 			\paragraph{Tipos de relaciones}
+	% 				\begin{enumerate}
+	% 					\item Tipo 1
+	% 				\end{enumerate}
+	% 			\paragraph{Modelo Chen}
+	% 			\paragraph{UML}
+	% 	\subsection{Construcción, implementación y mantenimiento}
+	% 		% Pendiente ver qué va aquí
+	% 	\subsection{Normalización}
+	% 		\subsubsection{Primera forma normal (1NF)}
+	% 		\subsubsection{Segunda forma normal (2NF)}
+	% 		\subsubsection{Tercera forma normal (3NF)}
+	% 	\subsection{Sistemas Manejadores de Bases de datos (DBMS)}
 		\subsection{Lenguaje de Consulta Estructurado (SQL)}
 			\subsubsection{Tipos de datos}
-				% tabla con el nombre, descripción y ejemplo
-			\subsubsection{Lenguaje de Definición de Datos (DDL)}
-				\paragraph{Creación de bases de datos y de tablas}
-				\paragraph{Modificación de tablas}
-				\paragraph{Eliminación de bases de datos y de tablas}
-			\subsubsection{Lenguaje de Manipulación de Datos (DML)}
-				\paragraph{Inserción de datos}
-				\paragraph{Restricciones (\textit{clauses})}
-				\paragraph{Modificación de registros}
-				\paragraph{Eliminación de registros}
-			\subsubsection{Lenguaje de Manipulación de Datos (DML)}
-				\paragraph{Creación y elminación de usuarios}
-				\paragraph{Creación y elminación de permisos}
-			\subsubsection{Consultas simples}
-				\paragraph{Comparaciones}
-				\paragraph{Comparación con rango}
-				\paragraph{Test de pertenencia}
-				\paragraph{Comparación con patrones}
-				\paragraph{Comparación con valores nulos}
-			\subsubsection{Funciones de agrupamiento \textit{aggregate functions}}
-				\paragraph{Promedio}
-				\paragraph{Cuenta}
-				\paragraph{Mínimo y máximo}
-				\paragraph{Suma}
-			\subsubsection{Uniones}
-				\paragraph{Natural join}
-				\paragraph{Inner join}
-				\paragraph{Outer join}
-				\paragraph{Producto cardinal}
-		\subsection{Integración de consultas SQL en págunas programadas en lenguaje PHP}
-			\subsubsection{CRUD (Crear, Leer, Actualizar y Borrar)}
-				\paragraph{Definición}
-				% table con cada función, código, y maybe ejemplo
-			\subsubsection{Manipulación de respuestas a una consulta}
-			\subsubsection{Errores de conexión a la base de datos}
-				% table con tipos de errores
+					\begin{center}
+						\begin{longtable}{c m{2.5cm} m{4cm} m{5cm}}
+							\caption{Etiquetas de HTML}\\
+							% Encabezado que se repite
+							\textbf{Tipo}	&	\textbf{Nombre}	&	\textbf{Descripción}	&	\textbf{Dominio}\\[0.5cm]\hline
+							\endfirsthead
+							% Para marcar continuación
+							\multicolumn{4}{c}{\tablename\ \thetable{} -- continuación de la pagina anterior}\\
+							\textbf{Tipo}	&	\textbf{Nombre}	&	\textbf{Descripción}	&	\textbf{Dominio}\\[0.5cm]\hline
+							\endhead
+							% Pie de tabla 
+							\hline\multicolumn{4}{c}{Continuación en la siguiente pagina}\\\hline
+							\endfoot
+							% Último pie de tabla
+							\hline
+							\endlastfoot
+							% Contenido
+							
+							\multirow{9}{*}{\rotatebox[origin=c]{90}{Numéricos}}
+								&	BOOL o\newline BOOLEAN	&	Valor de falso o verdadero		&	0, 1	\\[0.7cm]
+								&	BIT							&	Un bit												&	1 a 64\\[0.7cm]
+								&	TINYINT					&	Número entero diminuto con o sin signo	&	-128 a 127\newline0 a 255\\[0.7cm]
+								&	SMALLINT				&	Número entero chiquito con o sin signo	&	-32768 a 32767\newline0 a 65535\\[0.7cm]
+								&	MEDIUMINT				&	Número entero mediano con o sin signo		&	-8388608 a 8388607\newline0 a 65535\\[0.7cm]
+								&	INT\newline o INTEGER		&	Número entero con o sin signo						&	-2147483648 a 2147483647\newline0 a 4294967295\\[0.7cm]
+								&	BIGINT					& Número entero grande con o sin signo		&	-9223372036854775808 a 9223372036854775807\newline0 a 18446744073709551615\\[0.7cm]
+								& DECIMAL\newline(\textit{tam,d})	& Número decimal con un número de dígitos predefinido	&	Depende del atributo \textit{tam}\\[0.7cm]
+								&	FLOAT\newline(\textit{tam,d})		&	Número flotante pequeño					&	$-3.402823466\times10^{38}$ a $-1.175494351\times10^{38}$ ó\newline
+										$0$ ó\newline
+										$-1.175494351\times10^{38}$ a $-3.402823466\times10^{38}$
+									\\	
+							\multirow{4}{*}{\rotatebox[origin=c]{90}{Texto}}
+								&	CHAR(\textit{tam})		&	Una cadena de texto de longitud \textbf{fija}	de 0 a 255 caracteres	&	Depende de la base de datos\\
+								&	VARCHAR(\textit{tam})	&	Una cadena de texto de longitud \textbf{variable}	de 0 a 255 caracteres	&	Depende de la base de datos\\
+								&	TINYBLOB							&	Se usa para guardar \href{https://es.wikipedia.org/wiki/Binary_large_object}{BLOBs} de hasta 255 caracteres	&	Depende de la base de datos\\
+								&	TEXT									&	Se usa para guardar hasta 65,535 caracteres de texto	&	Depende de la base de datos\\
+							\multirow{4}{*}{\rotatebox[origin=c]{90}{Fecha}}
+								&	TIME			&	Una hora de formato hh:mm:ss												&	De '-838:59:59' a '838:59:59'\\
+								&	DATE			&	Una fecha de formato AAAA-MM-DD											&	De '1000-01-01' a '9999-12-31'\\
+								&	DATETIME	&	Una fecha y una hora de formato AAAA-MM-DD hh:mm:ss	&	De '1000-01-01 00:00:00' a '9999-12-31 23:59:59'\\
+								&	YEAR			&	Un año de formato AAAA															&	De 1901 a 2155, y 0000\\
+								&	TIMESTAMP	&	Atributo en el que se almacena el tiempo UNIX				&	De '1970-01-01 00:00:01' UTC a '2038-01-09 03:14:07' UTC
+						\end{longtable}
+					\end{center}
+	% 		\subsubsection{Lenguaje de Definición de Datos (DDL)}
+	% 			\paragraph{Creación de bases de datos y de tablas}
+	% 			\paragraph{Modificación de tablas}
+	% 			\paragraph{Eliminación de bases de datos y de tablas}
+	% 		\subsubsection{Lenguaje de Manipulación de Datos (DML)}
+	% 			\paragraph{Inserción de datos}
+	% 			\paragraph{Restricciones (\textit{clauses})}
+	% 			\paragraph{Modificación de registros}
+	% 			\paragraph{Eliminación de registros}
+	% 		\subsubsection{Lenguaje de Manipulación de Datos (DML)}
+	% 			\paragraph{Creación y elminación de usuarios}
+	% 			\paragraph{Creación y elminación de permisos}
+	% 		\subsubsection{Consultas simples}
+	% 			\paragraph{Comparaciones}
+	% 			\paragraph{Comparación con rango}
+	% 			\paragraph{Test de pertenencia}
+	% 			\paragraph{Comparación con patrones}
+	% 			\paragraph{Comparación con valores nulos}
+	% 		\subsubsection{Funciones de agrupamiento \textit{aggregate functions}}
+	% 			\paragraph{Promedio}
+	% 			\paragraph{Cuenta}
+	% 			\paragraph{Mínimo y máximo}
+	% 			\paragraph{Suma}
+	% 		\subsubsection{Uniones}
+	% 			\paragraph{Natural join}
+	% 			\paragraph{Inner join}
+	% 			\paragraph{Outer join}
+	% 			\paragraph{Producto cardinal}
+	% 	\subsection{Integración de consultas SQL en págunas programadas en lenguaje PHP}
+	% 		\subsubsection{CRUD (Crear, Leer, Actualizar y Borrar)}
+	% 			\paragraph{Definición}
+	% 			% table con cada función, código, y maybe ejemplo
+	% 		\subsubsection{Manipulación de respuestas a una consulta}
+	% 		\subsubsection{Errores de conexión a la base de datos}
+	% 			% table con tipos de errores
 \end{document}
 
 
